@@ -16,3 +16,6 @@ desktop.ini
 # 임시/비공개 데이터
 /private/
 *.local.md
+
+# OMC 도구 상태/인터뷰 산출물
+.omc/
