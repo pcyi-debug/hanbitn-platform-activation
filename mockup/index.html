@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한빛앤 · 플랫폼 활성화 대시보드 (목업)</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- ===================== Sidebar ===================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">한</div>
+        <div>
+          <div class="brand__name">한빛앤</div>
+          <div class="brand__sub">Activation Studio</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <div class="nav__label">측정 · 분석 (MVP)</div>
+        <button class="nav__item is-active" data-page="funnel">
+          <span class="nav__icon">▣</span> 활성화 퍼널
+          <span class="nav__badge">MVP</span>
+        </button>
+        <button class="nav__item" data-page="cohort">
+          <span class="nav__icon">▤</span> 코호트 리텐션
+        </button>
+        <button class="nav__item" data-page="segment">
+          <span class="nav__icon">◑</span> 세그먼트
+        </button>
+        <button class="nav__item" data-page="experiment">
+          <span class="nav__icon">⚗</span> A/B 실험
+        </button>
+
+        <div class="nav__label">활성화 · 리텐션 경험</div>
+        <button class="nav__item" data-page="onboarding">
+          <span class="nav__icon">◆</span> 온보딩
+        </button>
+        <button class="nav__item" data-page="retention">
+          <span class="nav__icon">↺</span> 재참여
+        </button>
+      </nav>
+
+      <div class="sidebar__foot">
+        북극성 지표: 활성화율<br />
+        baseline 30% → Q1 45% → Q2 55%
+      </div>
+    </aside>
+
+    <!-- ===================== Main ===================== -->
+    <main class="main">
+      <header class="header">
+        <div class="header__title" id="headerTitle">활성화 퍼널</div>
+        <div class="header__spacer"></div>
+        <div class="selector">
+          <span class="selector__dot"></span>
+          <select id="workspaceSelect">
+            <option>전체 워크스페이스</option>
+            <option>엔터프라이즈 팀</option>
+            <option>스타트업 팀</option>
+            <option>신규 가입 팀</option>
+          </select>
+        </div>
+        <div class="selector">
+          📅
+          <select id="periodSelect">
+            <option>최근 30일</option>
+            <option>최근 7일</option>
+            <option>이번 분기</option>
+          </select>
+        </div>
+        <div class="avatar">관</div>
+      </header>
+
+      <div class="content">
+        <!-- 상단 KPI 영역: 모든 화면 공통 -->
+        <section class="grid grid--4" id="kpiRow"></section>
+
+        <!-- 화면 컨테이너 (app.js가 렌더) -->
+        <section class="page is-active" id="page-funnel"></section>
+        <section class="page" id="page-cohort"></section>
+        <section class="page" id="page-segment"></section>
+        <section class="page" id="page-experiment"></section>
+        <section class="page" id="page-onboarding"></section>
+        <section class="page" id="page-retention"></section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
